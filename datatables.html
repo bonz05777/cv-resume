@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.bootstrap5.css">
 
+    <!-- Custom Script -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -98,247 +100,17 @@
                     </tr>
                 </tfoot>
             </table>
-
-            <style>
-                tfoot input {
-                    width: 100%;
-                    padding: 3px;
-                    box-sizing: border-box;
-                }
-            </style>
-
         </div>
     </div>
 
-    <script>
-        // datasource 
-        const data = {
-            "data": [
-                ["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011-04-25", "$320,800", "Full-Time"],
-                ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011-07-25", "$170,750", "Part-Time"],
-                ["Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009-01-12", "$86,000",
-                    "Freelance"
-                ],
-                ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "6224", "2012-03-29", "$433,060",
-                    "Full-Time"
-                ],
-                ["Airi Satou", "Accountant", "Tokyo", "5407", "2008-11-28", "$162,700", "Temporary"],
-                ["Brielle Williamson", "Integration Specialist", "New York", "4804", "2012-12-02", "$372,000",
-                    "Consultant"
-                ],
-                ["Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012-08-06", "$137,500",
-                    "Part-Time"
-                ],
-                ["Rhona Davidson", "Integration Specialist", "Tokyo", "6200", "2010-10-14", "$327,900",
-                    "Full-Time"
-                ],
-                ["Colleen Hurst", "Javascript Developer", "San Francisco", "2360", "2009-09-15", "$205,500",
-                    "Freelance"
-                ],
-                ["Sonya Frost", "Software Engineer", "Edinburgh", "1667", "2008-12-13", "$103,600",
-                    "Full-Time"
-                ],
-                ["Jena Gaines", "Office Manager", "London", "3814", "2008-12-19", "$90,560", "Full-Time"],
-                ["Quinn Flynn", "Support Lead", "Edinburgh", "9497", "2013-03-03", "$342,000", "Part-Time"],
-                ["Charde Marshall", "Regional Director", "San Francisco", "6741", "2008-10-16", "$470,600",
-                    "Full-Time"
-                ],
-                ["Haley Kennedy", "Senior Marketing Designer", "London", "3597", "2012-12-18", "$313,500",
-                    "Freelance"
-                ],
-                ["Tatyana Fitzpatrick", "Regional Director", "London", "1965", "2010-03-17", "$385,750",
-                    "Consultant"
-                ],
-                ["Michael Silva", "Marketing Designer", "London", "1581", "2012-11-27", "$198,500",
-                    "Full-Time"
-                ],
-                ["Paul Byrd", "Chief Financial Officer (CFO)", "New York", "3059", "2010-06-09", "$725,000",
-                    "Full-Time"
-                ],
-                ["Gloria Little", "Systems Administrator", "New York", "1721", "2009-04-10", "$237,500",
-                    "Freelance"
-                ],
-                ["Bradley Greer", "Software Engineer", "London", "2558", "2012-10-13", "$132,000", "Full-Time"],
-                ["Dai Rios", "Personnel Lead", "Edinburgh", "2290", "2012-09-26", "$217,500", "Temporary"],
-                ["Jenette Caldwell", "Development Lead", "New York", "1937", "2011-09-03", "$345,000",
-                    "Full-Time"
-                ],
-                ["Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "6154", "2009-06-25", "$675,000",
-                    "Part-Time"
-                ],
-                ["Caesar Vance", "Pre-Sales Support", "New York", "8330", "2011-12-12", "$106,450",
-                    "Full-Time"
-                ],
-                ["Doris Wilder", "Sales Assistant", "Sidney", "3023", "2010-09-20", "$85,600", "Consultant"],
-                ["Angelica Ramos", "Chief Executive Officer (CEO)", "London", "5797", "2009-10-09",
-                    "$1,200,000", "Full-Time"
-                ],
-                ["Gavin Joyce", "Developer", "Edinburgh", "8822", "2010-12-22", "$92,575", "Freelance"],
-                ["Jennifer Chang", "Regional Director", "Singapore", "9239", "2010-11-14", "$357,650",
-                    "Full-Time"
-                ],
-                ["Brenden Wagner", "Software Engineer", "San Francisco", "1314", "2011-06-07", "$206,850",
-                    "Part-Time"
-                ],
-                ["Fiona Green", "Chief Operating Officer (COO)", "San Francisco", "2947", "2010-03-11",
-                    "$850,000", "Full-Time"
-                ],
-                ["Shou Itou", "Regional Marketing", "Tokyo", "8899", "2011-08-14", "$163,000", "Consultant"],
-                ["Michelle House", "Integration Specialist", "Sidney", "2769", "2011-06-02", "$95,400",
-                    "Full-Time"
-                ],
-                ["Suki Burks", "Developer", "London", "6832", "2009-10-22", "$114,500", "Freelance"],
-                ["Prescott Bartlett", "Technical Author", "London", "3606", "2011-05-07", "$145,000",
-                    "Part-Time"
-                ],
-                ["Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008-10-26", "$235,500", "Full-Time"],
-                ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011-03-09", "$324,050",
-                    "Consultant"
-                ],
-                ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009-12-09", "$85,675",
-                    "Freelance"
-                ],
-                ["Howard Hatfield", "Office Manager", "San Francisco", "7031", "2008-12-16", "$164,500",
-                    "Full-Time"
-                ],
-                ["Hope Fuentes", "Secretary", "San Francisco", "6318", "2010-02-12", "$109,850", "Temporary"],
-                ["Vivian Harrell", "Financial Controller", "San Francisco", "9422", "2009-02-14", "$452,500",
-                    "Consultant"
-                ],
-                ["Timothy Mooney", "Office Manager", "London", "7580", "2008-12-11", "$136,200", "Full-Time"],
-                ["Jackson Bradshaw", "Director", "New York", "1042", "2008-09-26", "$645,750", "Full-Time"],
-                ["Olivia Liang", "Support Engineer", "Singapore", "2120", "2011-02-03", "$234,500",
-                    "Freelance"
-                ],
-                ["Bruno Nash", "Software Engineer", "London", "6222", "2011-05-03", "$163,500", "Part-Time"],
-                ["Sakura Yamamoto", "Support Engineer", "Tokyo", "9383", "2009-08-19", "$139,575", "Full-Time"],
-                ["Thor Walton", "Developer", "New York", "8327", "2013-08-11", "$98,540", "Freelance"],
-                ["Finn Camacho", "Support Engineer", "San Francisco", "2927", "2009-07-07", "$87,500",
-                    "Consultant"
-                ],
-                ["Serge Baldwin", "Data Coordinator", "Singapore", "8352", "2012-04-09", "$138,575",
-                    "Full-Time"
-                ],
-                ["Zenaida Frank", "Software Engineer", "New York", "7439", "2010-01-04", "$125,250",
-                    "Part-Time"
-                ],
-                ["Zorita Serrano", "Software Engineer", "San Francisco", "4389", "2012-06-01", "$115,000",
-                    "Temporary"
-                ],
-                ["Jennifer Acosta", "Junior Javascript Developer", "Edinburgh", "3431", "2013-02-01", "$75,650",
-                    "Full-Time"
-                ],
-                ["Cara Stevens", "Sales Assistant", "New York", "3990", "2011-12-06", "$145,600", "Consultant"],
-                ["Hermione Butler", "Regional Director", "London", "1016", "2011-03-21", "$356,250",
-                    "Full-Time"
-                ],
-                ["Lael Greer", "Systems Administrator", "London", "6733", "2009-02-27", "$103,500",
-                    "Temporary"
-                ],
-                ["Jonas Alexander", "Developer", "San Francisco", "8196", "2010-07-14", "$86,500", "Full-Time"],
-                ["Shad Decker", "Regional Director", "Edinburgh", "6373", "2008-11-13", "$183,000",
-                    "Part-Time"
-                ],
-                ["Michael Bruce", "Javascript Developer", "Singapore", "5384", "2011-06-27", "$183,000",
-                    "Freelance"
-                ],
-                ["Donna Snider", "Customer Support", "New York", "4226", "2011-01-25", "$112,000", "Full-Time"]
-            ]
-        };
-
-        // Initialize DataTables for both tables with consistent options
-        const options = {
-            data: data.data,
-            paging: true,
-            scrollY: "200px",
-            dom: '<"d-flex justify-content-center"p><"table"t><"bottom"l i><"clear">', // Custom positioning
-            initComplete: function () {
-                this.api()
-                    .columns()
-                    .every(function () {
-                        const column = this;
-                        const title = column.footer().textContent;
-
-                        // Create input element for individual column search
-                        const input = document.createElement("input");
-                        input.placeholder = title;
-                        column.footer().replaceChildren(input);
-
-                        // Event listener for column input search
-                        input.addEventListener("keyup", function () {
-                            if (column.search() !== input.value) {
-                                column.search(input.value).draw();
-                            }
-                        });
-                    });
-            },
-        };
-
-        // Initialize both tables with the same options
-        const table1 = new DataTable("#example1", options);
-        const table2 = new DataTable("#example2", options);
-
-        // Row selection functionality for both tables
-        function handleRowSelection(table) {
-            table.on("click", "tbody tr", (e) => {
-                const classList = e.currentTarget.classList;
-                if (classList.contains("selected")) {
-                    classList.remove("selected");
-                } else {
-                    table.rows(".selected").nodes().each((row) => row.classList.remove("selected"));
-                    classList.add("selected");
-                }
-            });
+    <style>
+        tfoot input {
+            width: 100%;
+            padding: 3px;
+            box-sizing: border-box;
         }
+    </style>
 
-        handleRowSelection(table1);
-        handleRowSelection(table2);
-
-        // Delete selected row in both tables
-        document.querySelector("#button").addEventListener("click", function () {
-            const selectedRowData1 = table1.row(".selected").data();
-            const selectedRowData2 = table2.row(".selected").data();
-
-            if (selectedRowData1) {
-                table1.row(".selected").remove().draw(false);
-                table2.rows().every(function () {
-                    if (this.data().toString() === selectedRowData1.toString()) {
-                        this.remove();
-                    }
-                });
-                table2.draw(false);
-            }
-
-            if (selectedRowData2) {
-                table2.row(".selected").remove().draw(false);
-                table1.rows().every(function () {
-                    if (this.data().toString() === selectedRowData2.toString()) {
-                        this.remove();
-                    }
-                });
-                table1.draw(false);
-            }
-        });
-
-        // Column visibility toggle functionality
-        document.querySelectorAll("a.toggle-vis").forEach((el) => {
-            el.addEventListener("click", function (e) {
-                e.preventDefault();
-                const columnIdx = e.target.getAttribute("data-column");
-
-                table1.column(columnIdx).visible(!table1.column(columnIdx).visible());
-                table2.column(columnIdx).visible(!table2.column(columnIdx).visible());
-            });
-        });
-
-        // Trigger table redraw when switching tabs to ensure correct column widths
-        document.querySelectorAll('button[data-bs-toggle="tab"]').forEach((tab) => {
-            tab.addEventListener("shown.bs.tab", function (e) {
-                table1.columns.adjust().draw();
-                table2.columns.adjust().draw();
-            });
-        });
-    </script>
 </body>
 
 </html>
