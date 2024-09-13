@@ -8,7 +8,7 @@ $(document).ready(function () {
       const options = {
         data: data.data,
         paging: true,
-        scrollY: "200px",
+        pageLength: 10, // Set the number of items to display per page
         dom: '<"d-flex justify-content-center"p><"table"t><"bottom"l i><"clear">', // Custom positioning
         initComplete: function () {
           this.api()
@@ -87,8 +87,10 @@ $(document).ready(function () {
           e.preventDefault();
           const columnIdx = e.target.getAttribute("data-column");
 
-          table1.column(columnIdx).visible(!table1.column(columnIdx).visible());
-          table2.column(columnIdx).visible(!table2.column(columnIdx).visible());
+          const activeTabId = document.querySelector(".tab-pane.active").id;
+          const table = activeTabId === "tab-table1" ? table1 : table2;
+
+          table.column(columnIdx).visible(!table.column(columnIdx).visible());
         });
       });
 
