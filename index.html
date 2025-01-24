@@ -58,11 +58,14 @@
     <!-- Profile Details 2 -->
     <div class="summary-section">
         <center>
-            <p><em>Hi, I'm<strong> Bonimae E. Laluna</strong>, a student at Mindanao State University - Gensan. I am
-                    working towards<br>
-                    becoming a web developer with a focus on user interfaces and databases. Dedicated to working in
-                    an environment that <br> encourages professional growth, where I can utilize my skills and
-                    knowledge.</em></p>
+        
+                <p><em>"Hi, I am a graduate of Bachelor of Science in Information Technology (BSIT)from Mindanao State University - Gensan. 
+                    I am willing to learn and grow as a web developer. I have experience in machine learning - computer vision,
+                    data analytics, and data visualization. I am interested in database management,
+                    and I am also keen to enhance my frontend development skills. 
+                    
+                    I am dedicated to working in an environment that encourages professional growth, where I can utilize and expand my knowledge."</em></p>
+       
         </center>
     </div>
 
@@ -110,28 +113,32 @@
     <!-- Education Details -->
     <div id="education" class="education">
         <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+        
         <div class="education-item">
             <div class="education-title">
-                <h3>Mindanao State University</h3>
-                <span>2020-Present</span>
+                <h3>TERTIARY</h3>
+                <h4>Mindanao State University</h4>
+                <span>2020-2025</span>
             </div>
-            <p>Bachelor of Science Information Technology</p>
+            <p style="text-align: center;">Bachelor of Science Information Technology</p>
         </div>
-
+    
         <div class="education-item">
             <div class="education-title">
-                <h3>Fatima National High School</h3>
+                <h3>SECONDARY</h3>
+                <h4>Fatima National High School</h4>
                 <span>2016-2020</span>
             </div>
-            <p>Junior and Senior High School</p>
+            <p style="text-align: center;">Junior and Senior High School</p>
         </div>
-
+    
         <div class="education-item">
             <div class="education-title">
-                <h3>Fatima Central Elementary School</h3>
+                <h3>PRIMARY</h3>
+                <h4>Fatima Central Elementary School</h4>
                 <span>2007-2013</span>
             </div>
-            <p></p>
+            <p style="text-align: center;">Elementary</p>
         </div>
     </div>
 
@@ -234,8 +241,7 @@
         <div id="imagePopup" class="popup">
             <div class="popup-content">
                 <span class="close">&times;</span>
-                <img id="popupImage" src="" alt="CertProj Image">
-
+                <img id="popupImage" src="" >
             </div>
         </div>
 
@@ -312,6 +318,39 @@
     </footer>
 
     <script src="js/resume.js"></script>
+
+    <script> 
+        document.addEventListener('DOMContentLoaded', function() {
+            const popupImage = document.getElementById('popupImage');
+            const imagePopup = document.getElementById('imagePopup');
+            const viewImageButtons = document.querySelectorAll('.view-image-btn, .view-project-btn');
+
+            // Function to check if the src is a valid image URL
+            function isValidImageUrl(url) {
+                return (url.match(/\.(jpeg|jpg|gif|png)$/) != null);
+            }
+
+            // Add event listeners to all view image buttons
+            viewImageButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                const imageUrl = button.getAttribute('data-image');
+                if (imageUrl && isValidImageUrl(imageUrl)) {
+                    popupImage.src = imageUrl;
+                    imagePopup.style.display = 'block';
+                } else {
+                    popupImage.src = '';
+                    imagePopup.style.display = 'none';
+                }
+                });
+            });
+
+            // Add event listener to close button to hide the popup
+            document.querySelector('.close').addEventListener('click', function() {
+                imagePopup.style.display = 'none';
+            });
+            });
+    </script>
+    
 </body>
 
 </html>
